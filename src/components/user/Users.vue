@@ -198,7 +198,7 @@ export default {
       const { data: res } = await this.$http.get('users', {
         params: this.queryInfo
       })
-      console.log(res)
+      // console.log(res)
       if (res.meta.status !== 200) return this.$message.error('获取用户列表失败')
       this.userList = res.data.users
       this.total = res.data.total
@@ -287,7 +287,7 @@ export default {
       const { data: res } = await this.$http.get('roles')
       if (res.meta.status !== 200) return this.$message.error('获取角色列表失败')
       this.roleList = res.data
-      console.log(res.data)
+      // console.log(res.data)
       this.setRoleDialogVisible = true
     },
     async saveRoleInfo() {

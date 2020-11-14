@@ -115,7 +115,7 @@ export default {
     async getCateList() {
       const { data: res } = await this.$http.get('categories', { params: this.queryInfo })
       if (res.meta.status !== 200) return this.$message.error('获取商品分类失败')
-      console.log(res)
+      // console.log(res)
       this.cateList = res.data.result
       this.total = res.data.total
     },
@@ -134,11 +134,11 @@ export default {
     async getParentCateList() {
       const { data: res } = await this.$http.get('categories', { params: { type: 2 } })
       if (res.meta.status !== 200) return this.$message.error('获取父级分类数据失败')
-      console.log(res)
+      // console.log(res)
       this.parentCateList = res.data
     },
     parentCateChanged() {
-      console.log(this.selectedKeys)
+      // console.log(this.selectedKeys)
       if (this.selectedKeys.length === 0) {
         this.addCateForm.cat_level = 0
         this.addCateForm.cat_pid = 0
@@ -155,7 +155,7 @@ export default {
         if (!valid) return
         const { data: res } = await this.$http.post('categories', this.addCateForm)
         if (res.meta.status !== 201) return this.$message.error('添加分类失败')
-        console.log(res)
+        // console.log(res)
         this.$message.success('添加分类成功')
         this.getCateList()
         this.addCateDialogVisible = false

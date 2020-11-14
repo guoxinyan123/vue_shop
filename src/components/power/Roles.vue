@@ -88,7 +88,7 @@ export default {
   methods: {
     async getRolesList() {
       const { data: res } = await this.$http.get('roles')
-      console.log(res)
+      // console.log(res)
       if (res.meta.status !== 200) this.$message.error('获取角色列表失败')
       this.rolesList = res.data
     },
@@ -111,7 +111,7 @@ export default {
       this.defKeys = []
       const { data: res } = await this.$http.get('rights/tree')
       if (res.meta.status !== 200) return this.$message.error('获取权限失败')
-      console.log(res)
+      // console.log(res)
       this.rightsList = res.data
       this.getLeafKeys(role, this.defKeys)
       this.setRightDialogVisible = true
