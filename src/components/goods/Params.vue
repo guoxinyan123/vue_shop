@@ -167,13 +167,13 @@ export default {
     },
     async getParamsList() {
       const { data: res } = await this.$http.get('categories/' + this.selectedCateKeys[2] + '/attributes', { params: { sel: this.activeName } })
-      // console.log(res)
       if (res.meta.status !== 200) return this.$message.error('获取参数列表失败')
       res.data.forEach(item => {
         item.attr_vals = item.attr_vals ? item.attr_vals = item.attr_vals.split(',') : []
         item.inputVisible = false
         item.inputValue = ''
       })
+      console.log(res.data)
       if (this.activeName === 'many') {
         this.manyParamsList = res.data
       } else {
@@ -242,7 +242,7 @@ export default {
       })
     },
     async handleInputConfirm(row) {
-      console.log(row)
+      // console.log(row)
       if (row.inputValue.trim().length === 0) {
         row.inputValue = ''
         row.inputVisible = false
