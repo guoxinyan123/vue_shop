@@ -15,6 +15,9 @@ html , body , #app {
     margin-top: 15px;
     font-size: 12px;
 }
+.el-pagination {
+    margin-top: 15px;
+}
 .el-steps {
     margin: 15px 0;
 }
@@ -23,4 +26,7 @@ html , body , #app {
 }
 .ql-editor {
     min-height: 500px;
+}
+.el-cascader-menu {
+    height: 300px;
 }
